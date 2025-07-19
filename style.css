@@ -1,36 +1,38 @@
 body {
-  font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
-  padding: 0;
-  color: #333;
-  background-color: #f8f8f8;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #eee;
+  background-color: #111;
 }
 
 .hero {
-  background: url('assets/background.jpg') center/cover no-repeat;
+  background: url('assets/backgrounds/hero-dark.jpg') center/cover no-repeat;
   height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
 }
 
 .overlay {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 2rem;
   text-align: center;
+  border-radius: 10px;
 }
 
 nav {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #222;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
 }
 
 nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
-  list-style: none;
   margin: 0;
-  padding: 1rem;
+  padding: 0;
 }
 
 nav li {
@@ -39,7 +41,7 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #333;
+  color: #ddd;
   font-weight: bold;
 }
 
@@ -47,38 +49,42 @@ nav a {
   text-align: center;
   padding: 2rem;
   font-style: italic;
+  background-color: #1a1a1a;
+  color: #ccc;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.photo-showcase {
+  background: url('assets/backgrounds/hero-dark.jpg') center/cover no-repeat, #111;
+  padding: 4rem 2rem;
+  min-height: 80vh;
+}
+
+.photo-strip {
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
-  padding: 2rem;
+  justify-content: center;
 }
 
-.gallery a {
-  display: block;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-
-.gallery img {
-  width: 100%;
+.photo-strip img {
+  max-width: 100%;
   height: auto;
-  transition: transform 0.3s ease;
-  display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
+.photo-strip img:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
   cursor: pointer;
 }
 
 .site-footer {
-  background-color: #fff;
+  background-color: #222;
   text-align: center;
   padding: 2rem;
-  border-top: 1px solid #ddd;
   font-size: 0.9rem;
+  border-top: 1px solid #444;
+  color: #bbb;
 }

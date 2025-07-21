@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Design with Quiet Purpose</title>
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Lightbox2 Styles & Scripts -->
+  <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+  <style>
+    .page-section {
+      display: none;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 0;
+    }
+
+    .page-section.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .nav a {
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
@@ -20,86 +35,65 @@
   </header>
 
   <nav>
-   <ul class="nav">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <ul class="nav">
+      <li><a onclick="showSection('about')">About</a></li>
+      <li><a onclick="showSection('projects')">Projects</a></li>
+      <li><a onclick="showSection('team')">Team</a></li>
+      <li><a onclick="showSection('contact')">Contact</a></li>
     </ul>
   </nav>
 
   <main>
-    <section class="philosophy">
-      <p>We believe every home is an echo of its inhabitant—not a template, but a personal rhythm.</p>
+    <section id="about" class="page-section active">
+      <h2>About Lydia Art</h2>
+      <p>Lydia Art is more than a studio—it’s a team of intentional creators... [full about text here]</p>
     </section>
 
-    <!-- 🖼 Photo Gallery Section -->
-    <section class="photo-showcase" id="projects">
+    <section id="projects" class="page-section">
+      <h2>Design Portfolio</h2>
       <div class="photo-strip">
-        <a href="assets/project photos/MyungJeong/MJ2.png" data-lightbox="myungjeong" data-title="Myung Jeong – MJ2">
-          <img src="assets/project photos/MyungJeong/MJ2.png" alt="Myung Jeong – MJ2">
+        <a href="assets/project photos/MyungJeong/MJ2.png" data-lightbox="myungjeong" data-title="MJ2">
+          <img src="assets/project photos/MyungJeong/MJ2.png" alt="Myung Jeong – MJ2" />
         </a>
-        <a href="assets/project photos/SaDam/SD3.png" data-lightbox="sadam" data-title="SaDam – SD3">
-          <img src="assets/project photos/SaDam/SD3.png" alt="SaDam – SD3">
-        </a>
-        <a href="assets/project photos/Well Organized Space/CL3.png" data-lightbox="Well Organized Space" data-title="Closet">
-          <img src="assets/project photos/Well Organized Space/CL3.png" alt="Well Organized Space">
-        </a>
-        <!-- Add more <a><img></a> blocks for other photos -->
+        <!-- Add more image blocks -->
       </div>
     </section>
-    
-    <section id="about">
-    <h2>About</h2>
-    <p>Lydia Art is more than a studio—it’s a team of intentional creators dedicated to designing spaces that soothe, inspire, and elevate. With roots in interior and architectural design, we craft environments that balance poetic vision with structural clarity.
 
-Our work is deeply personal. We believe that every space should reflect the lives and values of those who inhabit it. From serene homes to mindful workspaces, we focus on thoughtful layouts, purposeful organization, and the elegant interplay between light, texture, and functionality.
+    <section id="team" class="page-section">
+      <h2>Meet the Team</h2>
+      <div class="team-member">
+        <img src="assets/profile photos/SHS.jpg" alt="Architect Seung H-Sang" />
+        <h3>Seung H-Sang</h3>
+        <p>Born in 1952... [team bio text]</p>
+      </div>
 
-For us, the difference begins from the very first step—communication. We listen with care, collaborate with honesty, and work hand-in-hand to shape spaces that are not only well used, but well understood.
+      <div class="team-member">
+        <img src="assets/profile photos/BGM.png" alt="Interior Designer Ban Gi-Min" />
+        <h3>Ban Gi-Min</h3>
+        <p>Ban GiMin is a prominent interior designer... [team bio text]</p>
+      </div>
+    </section>
 
-Each member of our team brings a unique lens—blending minimalist aesthetics, cultural sensitivity, and a deep respect for form and use. Together, we design with clarity and build with grace.
-
-At Lydia Art, we create spaces where nothing feels wasted, everything feels intentional, and beauty is quietly built into every corner.</p>
-  </section>
-  <section id="team">
-  <h2>Meet the Team</h2>
-  <div class="team-member">
-    <img href="assets/profile photos/SHS.jpg" alt="Architect Seung H-Sang">
-    <h3>Architect Seung H-Sang</h3>
-    <p>Born in 1952, Seung H-Sang is a leading South
-Korean architect who studied in Seoul and Vienna.
-After working with Kim Swoo Geun, he founded
-IROJE architects & planners in 1989 and was a key
-figure in the "4.3 Group," advocating for new
-architectural ideas. He helped establish the Seoul
-School of Architecture and has held numerous
-professorships internationally, currently at Dong-A
-University.</p>
-  </div>
-
-  <div class="team-member">
-    <img href="assets/profile photos/BGM.png" alt="Interior Designer Ban Gi-Min">
-    <h3>Interior Designer Ban Gi-Min</h3>
-    <p>Ban GiMin is a prominent interior designer with a proven track
-record in shaping residential spaces. His portfolio includes
-significant contributions to apartment building projects, striking
-showroom designs, and engaging displays, all built upon his
-extensive experience with Hanssem Furniture and his
-personal venture, ViChe Design Studio.</p>
-  </div>
-
-  <!-- Add more team members here -->
-</section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>You can reach me at: <a href="mailto:lydiaart22@gmail.com">LydiaArt</a></p>
-  </section>
+    <section id="contact" class="page-section">
+      <h2>Contact</h2>
+      <p>You can reach us at: <a href="mailto:lydiaart22@gmail.com">lydiaart22@gmail.com</a></p>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p>Let's begin shaping a space that feels like home.</p>
+    <p>Let’s begin shaping a space that feels like home.</p>
     <p>&copy; 2025 Lydia Art. All rights reserved.</p>
   </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll(".page-section");
+      sections.forEach(section => section.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    // Optional: show "About" by default
+    window.onload = () => showSection('about');
+  </script>
 </body>
 </html>

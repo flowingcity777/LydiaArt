@@ -1,99 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Design with Quiet Purpose</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+/* 🌿 Base Typography and Colors */
+body {
+  font-family: 'Georgia', serif;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
 
-  <style>
-    .page-section {
-      display: none;
-      transition: opacity 0.5s ease-in-out;
-      opacity: 0;
-    }
+h1, h2, h3 {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
 
-    .page-section.active {
-      display: block;
-      opacity: 1;
-    }
+p {
+  margin-bottom: 1rem;
+}
 
-    .nav a {
-      cursor: pointer;
-    }
-  </style>
-</head>
+/* 🧭 Navigation Bar */
+.nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem 0;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
 
-<body>
-  <header class="hero">
-    <div class="overlay">
-      <h1>Design with Quiet Purpose</h1>
-      <p>We shape spaces that reflect need, meaning, and the soul of living.</p>
-    </div>
-  </header>
+.nav li {
+  margin: 0 1rem;
+}
 
-  <nav>
-    <ul class="nav">
-      <li><a onclick="showSection('about')">About</a></li>
-      <li><a onclick="showSection('projects')">Projects</a></li>
-      <li><a onclick="showSection('team')">Team</a></li>
-      <li><a onclick="showSection('contact')">Contact</a></li>
-    </ul>
-  </nav>
+.nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
 
-  <main>
-    <section id="about" class="page-section active">
-      <h2>About Lydia Art</h2>
-      <p>Lydia Art is more than a studio—it’s a team of intentional creators... [full about text here]</p>
-    </section>
+.nav a:hover {
+  background-color: #ddd;
+}
 
-    <section id="projects" class="page-section">
-      <h2>Design Portfolio</h2>
-      <div class="photo-strip">
-        <a href="assets/project photos/MyungJeong/MJ2.png" data-lightbox="myungjeong" data-title="MJ2">
-          <img src="assets/project photos/MyungJeong/MJ2.png" alt="Myung Jeong – MJ2" />
-        </a>
-        <!-- Add more image blocks -->
-      </div>
-    </section>
+/* 🎭 Page Sections */
+.page-section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
 
-    <section id="team" class="page-section">
-      <h2>Meet the Team</h2>
-      <div class="team-member">
-        <img src="assets/profile photos/SHS.jpg" alt="Architect Seung H-Sang" />
-        <h3>Seung H-Sang</h3>
-        <p>Born in 1952... [team bio text]</p>
-      </div>
+.page-section.active {
+  display: block;
+  opacity: 1;
+}
 
-      <div class="team-member">
-        <img src="assets/profile photos/BGM.png" alt="Interior Designer Ban Gi-Min" />
-        <h3>Ban Gi-Min</h3>
-        <p>Ban GiMin is a prominent interior designer... [team bio text]</p>
-      </div>
-    </section>
+/* 🖼 Photo Gallery */
+.photo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
 
-    <section id="contact" class="page-section">
-      <h2>Contact</h2>
-      <p>You can reach us at: <a href="mailto:lydiaart22@gmail.com">lydiaart22@gmail.com</a></p>
-    </section>
-  </main>
+.photo-strip img {
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
 
-  <footer class="site-footer">
-    <p>Let’s begin shaping a space that feels like home.</p>
-    <p>&copy; 2025 Lydia Art. All rights reserved.</p>
-  </footer>
+.photo-strip img:hover {
+  transform: scale(1.05);
+}
 
-  <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll(".page-section");
-      sections.forEach(section => section.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
+/* 👥 Team Section */
+.team-member {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 600px;
+}
 
-    // Optional: show "About" by default
-    window.onload = () => showSection('about');
-  </script>
-</body>
-</html>
+.team-member img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* 💌 Footer */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #f8f8f8;
+  color: #666;
+  font-size: 0.9rem;
+  border-top: 1px solid #e5e5e5;
+}

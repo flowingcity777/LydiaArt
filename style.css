@@ -1,108 +1,16 @@
-/* 🌿 Base Typography and Colors */
-body {
-  font-family: 'Georgia', serif;
-  color: #333;
-  background-color: #fff;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
-
-h1, h2, h3 {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-/* 🧭 Navigation Bar */
-.nav {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 1rem 0;
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #ddd;
-}
-
-.nav li {
-  margin: 0 1rem;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #444;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-.nav a:hover {
-  background-color: #ddd;
-}
-
-/* 🎭 Page Sections */
-.page-section {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-.page-section.active {
-  display: block;
-  opacity: 1;
-}
-
-/* 🖼 Photo Gallery */
-.photo-strip {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.photo-strip img {
-  max-width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.photo-strip img:hover {
-  transform: scale(1.05);
-}
-
-/* 👥 Team Section */
-.team-member {
-  text-align: center;
-  margin: 2rem auto;
-  max-width: 600px;
-}
-
-.team-member img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* 💌 Footer */
-.site-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: #f8f8f8;
-  color: #666;
-  font-size: 0.9rem;
-  border-top: 1px solid #e5e5e5;
-}
+<header class="hero-slideshow">
+  <!-- Slide 1 with Caption -->
+  <div class="slide fade" style="background-image: url('assets/project photos/MyungJeong/MJ2.png');">
+    <div class="slide-caption">Myung Jeong Project | Designer: Seung H-Sang</div>
+  </div>
+  <!-- Slide 2 with Caption (Add more slides as needed) -->
+  <div class="slide fade" style="background-image: url('assets/project photos/AnotherProject/Image.jpg');">
+    <div class="slide-caption">Project Name | Designer: Ban Gi-Min</div>
+  </div>
+  
+  <!-- Hero Text (Overlay) -->
+  <div class="hero-overlay">
+    <h1>Design with Quiet Purpose</h1>
+    <p>We shape spaces that reflect need, meaning, and the soul of living.</p>
+  </div>
+</header>

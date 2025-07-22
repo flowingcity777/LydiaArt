@@ -1,16 +1,110 @@
-<header class="hero-slideshow">
-  <!-- Slide 1 with Caption -->
-  <div class="slide fade" style="background-image: url('assets/project photos/MyungJeong/MJ2.png');">
-    <div class="slide-caption">Myung Jeong Project | Designer: Seung H-Sang</div>
-  </div>
-  <!-- Slide 2 with Caption (Add more slides as needed) -->
-  <div class="slide fade" style="background-image: url('assets/project photos/AnotherProject/Image.jpg');">
-    <div class="slide-caption">Project Name | Designer: Ban Gi-Min</div>
-  </div>
+/* ===== DARK THEME & HERO SLIDESHOW ADDITIONS ===== */
+/* (Add this to your existing style.css) */
+
+/* 🌑 Base Dark Theme Overrides */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.nav {
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.nav a {
+  color: #e0e0e0;
+}
+
+.nav a:hover {
+  background-color: #333;
+}
+
+.site-footer {
+  background-color: #1a1a1a;
+  color: #aaa;
+  border-top: 1px solid #333;
+}
+
+/* 🌟 Hero Slideshow */
+.hero-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slide.fade {
+  opacity: 1;
+}
+
+/* 📝 Slide Caption (Bottom Right) */
+.slide-caption {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.75rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-family: 'Helvetica Neue', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* 🖤 Hero Text Overlay */
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  max-width: 800px;
+}
+
+.hero-overlay h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-overlay p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 2rem;
+}
+
+/* 🖼️ Dark Mode Adjustments for Gallery */
+.photo-strip img {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.team-member img {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 📱 Responsive Tweaks */
+@media (max-width: 768px) {
+  .hero-overlay {
+    width: 90%;
+  }
   
-  <!-- Hero Text (Overlay) -->
-  <div class="hero-overlay">
-    <h1>Design with Quiet Purpose</h1>
-    <p>We shape spaces that reflect need, meaning, and the soul of living.</p>
-  </div>
-</header>
+  .slide-caption {
+    right: 10px;
+    bottom: 10px;
+    font-size: 0.65rem;
+  }
+}

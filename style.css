@@ -1,32 +1,30 @@
-/* ===== DARK THEME & HERO SLIDESHOW ADDITIONS ===== */
-/* (Add this to your existing style.css) */
-
-/* 🌑 Base Dark Theme Overrides */
+/* ===== BASE STYLES ===== */
 body {
+  font-family: 'Georgia', serif;
   background-color: #121212;
   color: #e0e0e0;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
-.nav {
-  background-color: #1a1a1a;
-  border-bottom: 1px solid #333;
+h1, h2, h3 {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-.nav a {
-  color: #e0e0e0;
+p {
+  margin-bottom: 1rem;
 }
 
-.nav a:hover {
-  background-color: #333;
+a {
+  color: #ff6b6b;
+  text-decoration: none;
 }
 
-.site-footer {
-  background-color: #1a1a1a;
-  color: #aaa;
-  border-top: 1px solid #333;
-}
-
-/* 🌟 Hero Slideshow */
+/* ===== HERO SLIDESHOW ===== */
 .hero-slideshow {
   position: relative;
   width: 100%;
@@ -48,7 +46,6 @@ body {
   opacity: 1;
 }
 
-/* 📝 Slide Caption (Bottom Right) */
 .slide-caption {
   position: absolute;
   right: 20px;
@@ -59,10 +56,8 @@ body {
   padding: 6px 12px;
   border-radius: 4px;
   font-family: 'Helvetica Neue', sans-serif;
-  letter-spacing: 0.5px;
 }
 
-/* 🖤 Hero Text Overlay */
 .hero-overlay {
   position: absolute;
   top: 50%;
@@ -79,24 +74,103 @@ body {
 .hero-overlay h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 1rem;
-  line-height: 1.2;
 }
 
 .hero-overlay p {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  margin-bottom: 2rem;
 }
 
-/* 🖼️ Dark Mode Adjustments for Gallery */
+/* ===== NAVIGATION ===== */
+.nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.nav li {
+  margin: 0 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: #333;
+}
+
+/* ===== PAGE SECTIONS ===== */
+.page-section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-section.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ===== PROJECT GALLERY ===== */
+.photo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto;
+}
+
 .photo-strip img {
+  max-width: 300px;
+  border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.photo-strip img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== TEAM SECTION ===== */
+.team-member {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 600px;
 }
 
 .team-member img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* 📱 Responsive Tweaks */
+/* ===== FOOTER ===== */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #1a1a1a;
+  color: #aaa;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (max-width: 768px) {
   .hero-overlay {
     width: 90%;
@@ -106,5 +180,13 @@ body {
     right: 10px;
     bottom: 10px;
     font-size: 0.65rem;
+  }
+  
+  .nav {
+    flex-wrap: wrap;
+  }
+  
+  .nav li {
+    margin: 0.25rem;
   }
 }

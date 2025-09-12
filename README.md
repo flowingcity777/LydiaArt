@@ -1,6 +1,6 @@
 # 🎨 LydiaArt - Interior & Architecture Design Studio
 A sleek, modern, and responsive website for LydiaArt, a boutique interior and architecture design studio. Built to showcase the team's portfolio, philosophy, and creative process.
-## https://via.placeholder.com/800x400?text=LydiaArt+Website+Preview
+## [https://via.placeholder.com/800x400?text=LydiaArt+Website+Preview](https://flowingcity777.github.io/LydiaArt/)
 # ✨ Features
 Responsive Design: Looks beautiful on desktops, tablets, and mobile devices.
 

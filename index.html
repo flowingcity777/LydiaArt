@@ -1,117 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Design with Quiet Purpose</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lydia Art</title>
   <style>
-    .page-section {
-      display: none;
-      transition: opacity 0.5s ease-in-out;
-      opacity: 0;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    .page-section.active {
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #2f2f2f;
+      background-color: #faf8f5;
+    }
+
+    img {
       display: block;
-      opacity: 1;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
     }
-    .nav a {
-      cursor: pointer;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid #e8e0d8;
+      background: #fffdfb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .site-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 72px 0 56px;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8a6f57;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: #1f1f1f;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 680px;
+      color: #4f4a45;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid #cdb9a5;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: #7b5c47;
+      color: white;
+      border-color: #7b5c47;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    section {
+      padding: 40px 0 70px;
+    }
+
+    .section-header {
+      margin-bottom: 28px;
+    }
+
+    .section-header h2 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #1f1f1f;
+    }
+
+    .section-header p {
+      color: #5f5954;
+      max-width: 700px;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .art-card {
+      background: #fffdfb;
+      border: 1px solid #ece4dc;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .art-card-content {
+      padding: 18px;
+    }
+
+    .art-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: #1f1f1f;
+    }
+
+    .art-card p {
+      font-size: 0.95rem;
+      color: #5b5651;
+    }
+
+    .selected-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .about-box {
+      background: #fffdfb;
+      border: 1px solid #ece4dc;
+      border-radius: 18px;
+      padding: 28px;
+      max-width: 850px;
+    }
+
+    .about-box p + p {
+      margin-top: 14px;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid #e8e0d8;
+      color: #6d6660;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 800px) {
+      .featured-grid,
+      .selected-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
-
 <body>
-  <!-- ===== NEW HERO SLIDESHOW ===== -->
-  <header class="hero-slideshow">
-    <!-- Slide 1 -->
-    <div class="slide fade" style="background-image: url('assets/project photos/MyungJeong/MJ2.png');">
-      <div class="slide-caption">Myung Jeong | Designer: Seung H-Sang</div>
-    </div>
-    <!-- Slide 2 (Add more as needed) -->
-    <div class="slide fade" style="background-image: url('assets/project photos/Hyunum/H9.png');">
-      <div class="slide-caption">Hyunum | Designer: Seung H-Sang</div>
-    </div>
-    <!-- Slide 3 -->
-    <div class="slide fade" style="background-image: url('assets/project photos/SaDam/SD3.png');">
-      <div class="slide-caption">Sa Dam | Designer: Seung H-Sang</div>
-    </div>
-    
-    <!-- Hero Text Overlay -->
-    <div class="hero-overlay">
-      <h1>Design with Quiet Purpose</h1>
-      <p>We shape spaces that reflect need, meaning, and the soul of living.</p>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="site-title">Lydia Art</a>
+      <nav class="nav-links">
+        <a href="#featured">Featured</a>
+        <a href="#selected">Selected Works</a>
+        <a href="#about">About</a>
+      </nav>
     </div>
   </header>
 
-  <nav>
-    <ul class="nav">
-      <li><a onclick="showSection('about')">About</a></li>
-      <li><a onclick="showSection('projects')">Projects</a></li>
-      <li><a onclick="showSection('team')">Team</a></li>
-      <li><a onclick="showSection('contact')">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <section id="about" class="page-section active">
-      <h2>About Lydia Art</h2>
-      <p>Lydia Art is more than a studio—it's a team of intentional creators...</p>
-    </section>
-
-    <section id="projects" class="page-section">
-      <h2>Design Portfolio</h2>
-      <div class="photo-strip">
-        <a href="assets/project photos/MyungJeong/MJ2.png" data-lightbox="myungjeong" data-title="MJ2">
-          <img src="assets/project photos/MyungJeong/MJ2.png" alt="Myung Jeong – MJ2">
-        </a>
-        <a href="assets/project photos/SaDam/SD2.png" data-lightbox="sadam" data-title="SD2">
-          <img src="assets/project photos/SaDam/SD2.png" alt="Sa Dam – SD2">
-        </a>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-content">
+        <p class="eyebrow">Personal art archive</p>
+        <h1>A quiet place for drawings, paintings, and remembered work.</h1>
+        <p>
+          Lydia Art is a personal website that gathers artwork from different periods of my life.
+          This space is meant to hold the pieces I have made, preserve them with care, and share
+          them with family over time.
+        </p>
+        <div class="hero-actions">
+          <a href="#featured" class="button primary">View Featured Works</a>
+          <a href="#about" class="button">Read About the Site</a>
+        </div>
       </div>
     </section>
 
-    <section id="team" class="page-section">
-      <h2>Meet the Team</h2>
-      <div class="team-member">
-        <iframe width="80%" height="400" src="https://youtu.be/zF-0MoT1afk" frameborder="0" allowfullscreen></iframe>
-        <h3>Seung H-Sang</h3>
-        <p>Born in 1952...</p>
-      </div>
-      <div class="team-member">
-        <iframe width="80%" height="400" src="https://youtu.be/f65XMYuifzU" frameborder="0" allowfullscreen></iframe>
-        <h3>Ban Gi-Min</h3>
-        <p>Ban GiMin is a prominent interior designer...</p>
+    <section id="featured">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Works</h2>
+          <p>
+            A small selection from the homepage. These pieces introduce the tone of the collection.
+          </p>
+        </div>
+
+        <div class="featured-grid">
+          <article class="art-card">
+            <img src="images/sketches.jpg" alt="A collection of sketches" />
+            <div class="art-card-content">
+              <h3>Sketches</h3>
+              <p>Observational and personal sketches that capture ideas, studies, and quiet moments.</p>
+            </div>
+          </article>
+
+          <article class="art-card">
+            <img src="images/monk.jpg" alt="Painting or drawing of a monk" />
+            <div class="art-card-content">
+              <h3>Monk</h3>
+              <p>A reflective piece centered on stillness, presence, and inward attention.</p>
+            </div>
+          </article>
+
+          <article class="art-card">
+            <img src="images/water-carrying-women.jpg" alt="Artwork of women carrying water" />
+            <div class="art-card-content">
+              <h3>Water Carrying Women</h3>
+              <p>A work shaped by movement, labor, and the quiet strength of daily life.</p>
+            </div>
+          </article>
+
+          <article class="art-card">
+            <img src="images/color-painting.jpg" alt="Color painting" />
+            <div class="art-card-content">
+              <h3>Color Painting</h3>
+              <p>A piece focused on color, atmosphere, and the emotional rhythm of the composition.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="page-section">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:lydiaart22@gmail.com">lydiaart22@gmail.com</a></p>
+    <section id="selected">
+      <div class="container">
+        <div class="section-header">
+          <h2>Selected Additional Works</h2>
+          <p>
+            This section can hold more drawings, handmade pieces, or future projects as the site grows.
+          </p>
+        </div>
+
+        <div class="selected-grid">
+          <article class="art-card">
+            <img src="images/work-1.jpg" alt="Additional artwork 1" />
+            <div class="art-card-content">
+              <h3>Additional Work One</h3>
+              <p>Replace with your image and caption.</p>
+            </div>
+          </article>
+
+          <article class="art-card">
+            <img src="images/work-2.jpg" alt="Additional artwork 2" />
+            <div class="art-card-content">
+              <h3>Additional Work Two</h3>
+              <p>Replace with your image and caption.</p>
+            </div>
+          </article>
+
+          <article class="art-card">
+            <img src="images/work-3.jpg" alt="Additional artwork 3" />
+            <div class="art-card-content">
+              <h3>Additional Work Three</h3>
+              <p>Replace with your image and caption.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>About This Site</h2>
+        </div>
+
+        <div class="about-box">
+          <p>
+            Lydia Art is not only a portfolio. It is also a personal home for artwork made across the years.
+            Some pieces are finished works, and some are simply meaningful traces of a moment, a season,
+            or a way of seeing.
+          </p>
+          <p>
+            The purpose of this site is to organize and preserve these works so they can remain visible,
+            remembered, and shared with family in the future.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>Let's begin shaping a space that feels like home.</p>
-    <p>&copy; 2025 Lydia Art. All rights reserved.</p>
+  <footer>
+    <div class="container">
+      <p>© 2026 Lydia Art. All rights reserved.</p>
+    </div>
   </footer>
-
-  <!-- ===== SCRIPTS ===== -->
-  <!-- Lightbox JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-  
-  <!-- Existing Section Toggler -->
-  <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll(".page-section");
-      sections.forEach(section => section.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
-    window.onload = () => showSection('about');
-  </script>
-  
-  <!-- NEW: Slideshow JS (save as assets/js/slideshow.js) -->
-  <script src="assets/js/slideshow.js"></script>
 </body>
 </html>

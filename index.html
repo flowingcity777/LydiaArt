@@ -138,10 +138,28 @@
     }
 
     .featured-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
-    }
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.art-image-frame {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  background: #f3eee8;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.art-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
 
     .art-card {
       background: #fffdfb;
@@ -244,7 +262,9 @@
 
         <div class="featured-grid">
           <article class="art-card">
-            <img src="assets/images/sketches.jpg" alt="A collection of sketches" />
+            <div class="art-image-frame">
+              <img src="assets/images/sketches.jpg" alt="A collection of sketches" />
+            </div>
             <div class="art-card-content">
               <h3>Sketches</h3>
               <p>Observational and personal sketches that capture ideas, studies, and quiet moments.</p>
@@ -252,7 +272,9 @@
           </article>
 
           <article class="art-card">
-            <img src="assets/images/monk.jpg" alt="Painting or drawing of a monk" />
+            <div class="art-image-frame">
+              <img src="assets/images/monk.jpg" alt="Painting or drawing of a monk" />
+            </div>
             <div class="art-card-content">
               <h3>Monk</h3>
               <p>A reflective piece centered on stillness, presence, and inward attention.</p>
@@ -260,7 +282,9 @@
           </article>
 
           <article class="art-card">
-            <img src="assets/images/water-carrying-women.jpg" alt="Artwork of women carrying water" />
+            <div class="art-image-frame">
+              <img src="assets/images/water-carrying-women.jpg" alt="Artwork of women carrying water" />
+            </div>
             <div class="art-card-content">
               <h3>Water Carrying Women</h3>
               <p>A work shaped by movement, labor, and the quiet strength of daily life.</p>
@@ -268,7 +292,9 @@
           </article>
 
           <article class="art-card">
-            <img src="assets/images/color-painting.jpg" alt="Color painting" />
+            <div class="art-image-frame">
+              <img src="assets/images/color-painting.jpg" alt="Color painting" />
+            </div>
             <div class="art-card-content">
               <h3>Color Painting</h3>
               <p>A piece focused on color, atmosphere, and the emotional rhythm of the composition.</p>
@@ -289,7 +315,9 @@
 
         <div class="selected-grid">
           <article class="art-card">
-            <img src="assets/images/work-1.jpg" alt="Additional artwork 1" />
+            <div class="art-image-frame">
+              <img src="assets/images/work-1.jpg" alt="Additional artwork 1" />
+            </div>
             <div class="art-card-content">
               <h3>Additional Work One</h3>
               <p>Replace with your image and caption.</p>
@@ -297,7 +325,9 @@
           </article>
 
           <article class="art-card">
-            <img src="assets/images/work-2.jpg" alt="Additional artwork 2" />
+            <div class="art-image-frame">
+              <img src="assets/images/work-2.jpg" alt="Additional artwork 2" />
+            </div>
             <div class="art-card-content">
               <h3>Additional Work Two</h3>
               <p>Replace with your image and caption.</p>
